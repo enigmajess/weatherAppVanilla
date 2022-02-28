@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    margin: 50px 90px;
+}
+
+h2, h3, h4 {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#cityTemp {
+    padding: 0px;
+}
+
+#cityTempC {
+    padding: 0px;
+}
+
+#cityTempF {
+    padding: 0px;
+}
+
+
+
+.main_weather {
+    width: 80px;
+}
+
+.current_temperature {
+    display: inline;
+    text-align: center;
+    font-size: 40px;
+}
+
+.weather_attributes {
+    list-style: none;
+    display: inline-block;
+   text-align: right;
+   font-size: 20px;
+}
+
+p {
+    text-align: left;
+    margin-top: 30px;
+    padding: 10px;
+}
+

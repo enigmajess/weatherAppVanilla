@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container-"></div>
+    <form type = "text" id= "cityInput">
+      
+        <h1>Weather Forcast</h1>
+        <div class="row justify-content-center">
+          <div class="mb-3 col-6">
+            <input id="searchBar"  type="text" class="form-control" placeholder="Location" />
+          </div>
+          <div id="classButton" class="col-1">
+            <button type="submit" class="btn btn-info">Search</button>
+          </div>
+          <div id="locationButton" class="col-1">
+            <button type="button"  class="btn btn-info">📍</button>
+          </div>
+        </div>
+    </form>
+      <div class="border mb-6">
+        <h2 id="searchCity">Tempe, AZ</h2>
+        <h3 id = "displayDate">Tue, Jan 4th</h3>
+        <h4>Current Time</h4>
+        <div class="row justify-content-evenly">
+          <img src="photos/sun-solid.svg" class="col-auto main_weather" />
+          <div class="col-auto" class="col-auto my-auto current_temperature">
+            <h2 id = "cityTemp" class="col-auto my-auto current_temperature">64 </h2>
+            <h2 id = "cityTempC" class="col-auto my-auto current_temperature">℃/</h2>
+            <h2 id = "cityTempF" class="col-auto my-auto current_temperature">℉</h2>
+          </div>
+          <ul class="col-auto my-auto weather_attributes">
+            <li>Sunny</li>
+            <li>64℉/ 39℉</li>
+            <li>Feels like 64℉</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="border">5 day Forcast</p>
+
+      <div class="row text-center h-100">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Wed Jan 5</h5>
+              <img src="photos/sun-solid.svg" width="40px" />
+              <p class="card-text">66℉ /</p>
+              <p class="card-text">42℉</p>
+              <p class="card-text">☔ 4%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Thur Jan 6</h5>
+              <img src="photos/sun-solid.svg" width="40px" />
+              <p class="card-text">69℉ /</p>
+              <p class="card-text">45℉</p>
+              <p class="card-text">☔ 6%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Fri Jan 7</h5>
+              <img src="photos/cloud-sun-solid.svg" width="50px" />
+              <p class="card-text">71℉ /</p>
+              <p class="card-text">43℉</p>
+              <p class="card-text">☔ 4%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sat Jan 8</h5>
+              <img src="photos/cloud-sun-solid.svg" width="50px" />
+              <p class="card-text">69℉ /</p>
+              <p class="card-text">45℉</p>
+              <p class="card-text">☔ 4%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sun Jan 9</h5>
+              <img src="photos/cloud-sun-solid.svg" width="50px" />
+              <p class="card-text">72℉ /</p>
+              <p class="card-text">53S℉</p>
+              <p class="card-text">☔ 1%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
