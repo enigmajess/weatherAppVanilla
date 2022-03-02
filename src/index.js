@@ -21,6 +21,7 @@ let months = [
   "Nov",
   "Dec",
 ];
+
 let month = months[now.getMonth()];
 
 let displayDate = document.querySelector("#displayDate");
