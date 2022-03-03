@@ -98,6 +98,18 @@ function currentTemp(response) {
 
   let searchCity = document.querySelector("#searchCity");
   searchCity.innerHTML = response.data.name.toUpperCase();
+
+  let weatherDescription = document.querySelector("#weatherDescription");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+
+ 
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute("alt", response.data.weather[0].description);
+
+  let windSpeed = document.querySelector("#windSpeed")
+  windSpeed.innerHTML = "wind: " + Math.round(response.data.wind.speed) + " mph";
+  
 }
 
 function coorPosition(position) {
