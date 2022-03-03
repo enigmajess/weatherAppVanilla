@@ -36,16 +36,15 @@
         <h3 id = "displayDate">Tue, Jan 4th</h3>
         <h4>Current Time</h4>
         <div class="row justify-content-evenly">
-          <img src="photos/sun-solid.svg" class="col-auto main_weather" />
+          <img id = "icon" class="col-auto main_weather icon" src = http://openweathermap.org/img/wn/10d@2x.png alt = "sunny">
           <div class="col-auto" class="col-auto my-auto current_temperature">
             <h2 id = "cityTemp" class="col-auto my-auto current_temperature">64 </h2>
             <h2 id = "cityTempC" class="col-auto my-auto current_temperature">℃/</h2>
             <h2 id = "cityTempF" class="col-auto my-auto current_temperature">℉</h2>
           </div>
           <ul class="col-auto my-auto weather_attributes">
-            <li>Sunny</li>
-            <li>64℉/ 39℉</li>
-            <li>Feels like 64℉</li>
+            <li id= weatherDescription>Sunny</li>
+            <li id = "windSpeed">Wind Speed</li>
           </ul>
         </div>
       </div>

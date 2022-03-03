@@ -22,7 +22,10 @@ let months = [
   "Dec",
 ];
 
+
 let month = months[now.getMonth()];
+
+
 
 let displayDate = document.querySelector("#displayDate");
 displayDate.innerHTML = `${day} ${month} ${date}, ${year}`;
@@ -30,35 +33,27 @@ displayDate.innerHTML = `${day} ${month} ${date}, ${year}`;
 let h4 = document.querySelector("h4");
 h4.innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-let weather = {
-  paris: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  tokyo: {
-    temp: 17.3,
-    humidity: 50,
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20,
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100,
-  },
-  moscow: {
-    temp: -5,
-    humidity: 20,
-  },
-};
 
-// let temperature = Math.round(weather[city.value].temp);
+
+
+
 
 function cityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#cityTemp");
   cityTemp.innerHTML = temperature;
+
+  let weatherDescription = document.querySelector("#weatherDescription");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+
+ 
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute("alt", response.data.weather[0].description);
+
+  let windSpeed = document.querySelector("#windSpeed")
+  windSpeed.innerHTML = "wind: " + Math.round(response.data.wind.speed) + " mph";
+  
 }
 
 function citySearch(event) {
