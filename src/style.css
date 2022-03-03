@@ -46,3 +46,7 @@ p {
     padding: 10px;
 }
 
+.container {
+    max-width: 600px;
+};
+
