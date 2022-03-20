@@ -30,10 +30,11 @@ displayDate.innerHTML = `${day} ${month} ${date}, ${year}`;
 let h4 = document.querySelector("h4");
 h4.innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-function displayProjectedForcast() {
+function displayProjectedForcast(response) {
+  console.log(response.data.daily)
   let forecastElement = document.querySelector("#projected-forecast");
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div  class ="row">`;
 
@@ -58,6 +59,14 @@ function displayProjectedForcast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast (coordinates) {
+  let key = `4f8353f322c9f415161732592106f878`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}`
+  console.log(coordinates);
+
+  axios.get(apiURL).then(displayProjectedForcast);
+}
+
 function cityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#cityTemp");
@@ -76,6 +85,8 @@ function cityTemp(response) {
   let windSpeed = document.querySelector("#windSpeed");
   windSpeed.innerHTML =
     "wind: " + Math.round(response.data.wind.speed) + " mph";
+
+  getForecast(response.data.coord);
 
   displayProjectedForcast();
 }
@@ -136,7 +147,8 @@ function currentTemp(response) {
   let windSpeed = document.querySelector("#windSpeed");
   windSpeed.innerHTML =
     "wind: " + Math.round(response.data.wind.speed) + " mph";
-
+  
+  getForecast(response.data.coord);
   displayProjectedForcast();
 }
 
